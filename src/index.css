@@ -1,0 +1,8 @@
+html,
+body,
+#root {
+  height: 100%;
+  padding-top: 60px;
+  background-color: #282c34;
+  --bs-body-bg: #282c34;
+}
