@@ -15,7 +15,7 @@
     "react-bootstrap": "*",
     "react-dom": "*",
     "react-router-dom": "*",
-    "react-scripts": "5",
+    "react-scripts": "*",
     "react-textarea-autosize": "*",
     "uuid": "*",
     "web-vitals": "*"
