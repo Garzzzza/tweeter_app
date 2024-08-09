@@ -15,17 +15,15 @@ const SignIn = () => {
 
   return (
     <div className="profilePageDiv">
-      <div className="signUpDiv">
-        <div className="formDiv">
-          <div className="formInputTitle">Email</div>
-          <input
-            type="text"
-            value={signInEmail}
-            onChange={(e) => {
-              setSignInEmail(e.target.value);
-            }}
-          ></input>
-        </div>
+      <div className="formDiv">
+        <div className="formInputTitle">Email</div>
+        <input
+          type="text"
+          value={signInEmail}
+          onChange={(e) => {
+            setSignInEmail(e.target.value);
+          }}
+        ></input>
       </div>
       <div className="formDiv">
         <div className="formInputTitle">Password</div>
@@ -38,15 +36,17 @@ const SignIn = () => {
         ></input>
       </div>
       <div>
-        <button
-          className="formButton"
-          onClick={(e) => {
-            signIn(e, signInEmail, signInPass);
-          }}
-        >
-          Sign In
-        </button>
-        <div>
+        <div className="formDiv">
+          <button
+            className="formButton"
+            onClick={(e) => {
+              signIn(e, signInEmail, signInPass);
+            }}
+          >
+            Sign In
+          </button>
+        </div>
+        <div className="formDiv">
           <button className="formButton" onClick={signInWithGoogle}>
             Sign In with Google
           </button>

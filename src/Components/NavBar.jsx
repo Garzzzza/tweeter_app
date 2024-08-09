@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ProfileContext } from "../Context/ProfileContext";
 
 const NavBar = () => {
-  const { userId, logOut } = useContext(ProfileContext);
+  const { userId, logOut, isGoogleSignIn } = useContext(ProfileContext);
 
   return (
     <div className="NavBar">
@@ -17,18 +17,18 @@ const NavBar = () => {
           Sign In
         </Link>
       )}
-      {userId && (
+      {userId && !isGoogleSignIn && (
         <Link className="PageTab" to="/home">
           Home
         </Link>
       )}
-      {userId && (
+      {userId && !isGoogleSignIn && (
         <Link className="PageTab" to="/profile">
           Profile
         </Link>
       )}
       {userId && (
-        <div className=" PageTab formButton" onClick={logOut}>
+        <div className=" PageTab logoutButton" onClick={logOut}>
           Log Out
         </div>
       )}

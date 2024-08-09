@@ -29,6 +29,7 @@ const ProfileContextProvider = ({ children }) => {
   const [signUpPass, setSignUpPass] = useState("");
   const [userId, setUserId] = useState(localStorage.getItem("userId") || null);
   const [signInEmail, setSignInEmail] = useState("");
+  const [isGoogleSignIn, setIsGoogleSignIn] = useState(false);
   const [signInPass, setSignInPass] = useState("");
   const [userImage, setUserImage] = useState("");
 
@@ -80,7 +81,8 @@ const ProfileContextProvider = ({ children }) => {
       });
       setUserId(result.user.uid);
       localStorage.setItem("userId", result.user.uid);
-      console.log(userId);
+      setIsGoogleSignIn(true);
+      navigate("/home");
     } catch (error) {
       // Handle Errors here.
       const errorCode = error.code;
@@ -109,6 +111,7 @@ const ProfileContextProvider = ({ children }) => {
   const logOut = () => {
     localStorage.clear();
     setUserId(null);
+    setIsGoogleSignIn(false);
     navigate("/");
   };
 
@@ -117,6 +120,8 @@ const ProfileContextProvider = ({ children }) => {
       value={{
         userId,
         setUserId,
+        isGoogleSignIn,
+        setIsGoogleSignIn,
         signUp,
         signIn,
         signOut,

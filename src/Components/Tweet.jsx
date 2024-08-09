@@ -27,10 +27,12 @@ const Tweet = ({ tweet }) => {
   return (
     <div className="tweetDiv">
       <div className="userNameAndDateDiv">
-        <div className=" userNameDiv">{userInfoOfSingleTweet.userName}</div>
-        <div className=" dateDiv">{tweet.date}</div>
+        <div className=" userNameDiv">
+          <img src={userInfoOfSingleTweet.image} alt="imagef" />
+          <div className=" userNameDiv">{userInfoOfSingleTweet.userName}</div>
+        </div>
+        <div className=" dateDiv"> {new Date(tweet.date).toLocaleString()}</div>
       </div>
-      <img src={userInfoOfSingleTweet.image} alt="imagef" />
 
       <div className="contentDiv">{tweet.content}</div>
     </div>
